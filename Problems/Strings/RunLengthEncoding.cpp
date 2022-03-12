@@ -1,39 +1,9 @@
-# DSA (Data Structures and Algorithms) <br/>
-<br/>
-
-```diff
-This repository contains the code implementation in JS/C++14 -> 
-
-+    1. Linear Data Structures
-         * Arrays
-         * Linked Lists
-         * Stacks
-         * Queues
-         * Hash Tables
-         
-+    2. Non-Linear Data Structures
-         * Trees
-         * Graphs
-         
--    3. Algorithms
-         * Dijkstra's Algorithm
-         * Dynamic Programming
-         * Bellman-Ford Algorithm
-         * Floyd-Warshall Algorithm
-         * Union-Find/Disjoint Set
-         * Krukshal's Algorithm
-         * Topological Sorting
-         * Maximum Bipartite Matching
-         * Kadane's Algorithm
-    
-
-
 /**
  * @file RunLengthEncoding.cpp
  * @author Tanvi (1998tanvi@gmail.com)
  * @brief 
  * @version 0.1
- * @date 2022-03-13
+ * @date 2022-03-12
  * 
  * @copyright Copyright (c) 2022
  * 
@@ -49,11 +19,49 @@ This repository contains the code implementation in JS/C++14 ->
 #include<bits/stdc++.h>
 using namespace std;
 
+//str is the input the string
+string compressString(const string &S){   
+    //complete the function to return output string
+   char ch = S[0];
+    int cnt = 0;
+    string ans = "";
+    for(size_t i=0;i<S.size();i++)
+    {
+        if(ch == S[i])
+            cnt++;
+        else
+        {
+            ans += ch;
+            ans += to_string(cnt);
+            ch = S[i];
+            cnt = 1;
+        }
+    }
+    
+    ans += ch;
+    ans += to_string(cnt);
+    
+    if(ans.length()<S.length())
+        return ans;
+    
+    return S;
+}
+
+
 int main()
 {
-    
+    int T;
+    cin>>T;
+    while(T--)
+    {
+        string S;
+        cin>>S;
+        string ans = compressString(S);
+        cout<<ans<<endl;
+    }
     return 0;
 }
+
 
 
 /**
