@@ -18,6 +18,33 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+vector<vector<int>> housing(int *A, int N, int K)
+{
+    int i=0;
+    int j=0;
+    int cn = 0;
+
+    vector<vector<int>>ans;
+
+    while(j<N)
+    {
+        cn += A[j];
+        j++;
+
+        while(cn>K && i<j)
+        {
+            cn = cn-A[i];
+            i++;
+        }
+
+        if(cn==K)
+        {
+            ans.push_back({i,j-1});
+        }
+    }
+
+    return ans;
+}
 
 
 int main()
@@ -32,7 +59,27 @@ int main()
         cin>>A[i];
     }
 
-    vector<vector<int>>ans = 
+    vector<vector<int>>ans = housing(A, N, K)
+
+    for(int i=0;i<ans.size();i++)
+        cout<<ans[i][0]<<"-"<<ans[i][1]<<endl;
+
+    int minX = __INT16_MAX__;
+    pair<int,int> minW;
+
+    // smallest window
+    for(int i=0;i<ans.size();i++)
+    {
+        if(ans[i][1]-ans[i][0] < minX)
+        {
+            minX = ans[i][1]-ans[i][0];
+            minW.first = ans[i][0];
+            minW.second = ans[i][1];
+        }
+    } 
+
+    cout<<"Smallest Window - "<<minW.first<<" "<<minW.second<<endl
+
 
     return 0;
 }
