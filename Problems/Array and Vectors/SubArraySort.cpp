@@ -29,7 +29,7 @@ pair<int,int> subarraySort(vector<int>arr)
 
     for(int i=0;i<N;i++)
     {
-        if(outOfOrder(arr[i]))
+        if(outOfOrder(arr,i))
         {
             lar = max(lar,arr[i]);
             smal = min(smal, arr[i]);

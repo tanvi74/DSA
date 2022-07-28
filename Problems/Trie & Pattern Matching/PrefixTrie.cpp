@@ -1,12 +1,14 @@
 
 /**
- * @file .cpp
+ * @file PrefixTrie.cpp
  * @author Tanvi (tanvi.agrawal@byjus.com)
  * @brief 
  * @version 0.1
- * @date 2022-07-04
+ * @date 2022-06-25
  * 
  * @copyright Copyright (c) 2022
+ * 
+ * Given a list of string and Q queries, each query containing a word, you have to tell if htat word is in the list or not.
  * 
  * 
  */
@@ -71,6 +73,27 @@ class Trie
 
 int main()
 {
+    stirng words = ["apple", "ape", "news", "no", "mango"];
+    string S;
+    
+    Trie t;
+    for(auto w: words) 
+    {
+        t.insert(w);
+    }
+
+    int q;
+    cin>>q;
+
+    while(q--)
+    {
+        cin>>S;
+        if(t.search(S))
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
+    }
+
     return 0;
 }
 
@@ -78,9 +101,17 @@ int main()
  * @brief EXAMPLE
  * 
  * INPUT
- *
+ * 4
+ * apple
+ * india
+ * news
+ * new
  * 
  * OUTPUT
+ * yes
+ * no
+ * yes
+ * no
  * 
  * 
  */
