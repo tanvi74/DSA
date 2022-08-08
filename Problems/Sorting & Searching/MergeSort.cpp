@@ -18,7 +18,7 @@ using namespace std;
 void merge(vector<int>&arr, int s, int e)
 {
     int i=s;
-    int mid = (s+e)/2;
+    int m = (s+e)/2;
     int j=m+1;
 
     vector<int> temp;
