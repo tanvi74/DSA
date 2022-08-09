@@ -27,7 +27,7 @@ int countSubsets(vector<int>arr, int n, int i, int X)
 
     // Recursive Case
     int inc = countSubsets(arr, n, i+1, X-arr[i]);
-    int dec = countSubsets(arr, n, i, X);
+    int dec = countSubsets(arr, n, i+1, X);
 
     return inc+dec;
 }
