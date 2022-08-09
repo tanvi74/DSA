@@ -10,7 +10,7 @@ vector<int>stringSearch(string big,string small){
     //store the occurrences in the result vector
     vector<int>result = {};
     
-    int index = big.fid(small);
+    int index = big.find(small);
 
     while(index!=-1)
     {
