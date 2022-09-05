@@ -13,7 +13,7 @@ vector<string>tokenisation(string S)
     vector<string>tokens;
 
     while(getline(ss, token, ' '))
-    {
+    { 
         tokens.push_back(token);
     }
 

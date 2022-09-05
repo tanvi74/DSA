@@ -43,7 +43,7 @@ int min_bars_helper(string S, vector<string>words, int idx, unordered_set<string
         }
     }
 
-    1if(ans == INT_MAX)
+    if(ans == INT_MAX)
         return -1;
 
     return ans;
@@ -62,7 +62,7 @@ int min_bars(string S, vector<string>words)
     // Recursive helper function
     int output = min_bars_helper(S,words,0,m);
 
-    return output-1
+    return output-1;
 }
 
 int main()

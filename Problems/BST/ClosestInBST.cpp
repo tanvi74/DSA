@@ -58,7 +58,7 @@ int findClosestInBST(int key, node*root)
 
     while(temp!=NULL)
     {
-        int curr_diff = abs(key, temp->key);
+        int curr_diff = abs(key-temp->key);
 
         if(curr_diff==0)
         {

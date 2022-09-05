@@ -84,7 +84,7 @@ int main()
     }  
 
     int l = lower_bound(Ti,key);
-    int u = lower_bound(Ti,key);
+    int u = upper_bound(Ti,key);
 
     cout<<u-l+1<<endl;
 
@@ -105,6 +105,6 @@ int main()
  * 
  *
  * OUTPUT
- * 1
+ * 3
  * 
  */

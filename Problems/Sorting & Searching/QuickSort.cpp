@@ -17,6 +17,53 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// using start as pivot ele
+/**
+
+int partition(vector<int>&array, int start, int end)
+{
+  int pivot = array[start];
+  int left = start+1, right=end;
+  
+  while(left<=right)
+    {
+      if(array[left]<pivot)
+        left++;
+      else
+      {
+        if(array[right]<pivot)
+        {
+          swap(array[left],array[right]);
+          left++;
+          right--;
+        }
+        else
+        {
+          right--;
+        }
+      }
+    }
+
+  swap(array[right],array[start]);
+  return right;
+}
+
+
+void quick(vector<int>&array, int start, int end)
+{
+  if(start>=end)
+    return;
+
+  int p = partition(array, start, end);
+
+  quick(array, start, p-1);
+  quick(array, p+1, end);
+  
+}
+
+
+ */
+
 int partition(vector<int> &arr, int s, int e)
 {
     int i = s-1;

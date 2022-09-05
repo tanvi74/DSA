@@ -7,7 +7,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void sortSubsequence(string S, string S1, vector<string>V )
+void sortSubsequence(string S, string S1, vector<string>&V )
 {
     // base case
     if(S.size()==0)

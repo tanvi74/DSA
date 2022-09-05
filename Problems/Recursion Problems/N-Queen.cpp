@@ -66,6 +66,7 @@ bool canPlace(int board[][20], int N, int x, int y)
     i=x;
     j=y;
 
+    // Right diagonal
     while(i>=0 && j<N)
     {
         if(board[i][j]==1)

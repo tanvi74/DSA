@@ -90,8 +90,8 @@ LinkedList tree2LL(node * root)
         LinkedList leftLL = tree2LL(root->left);
         leftLL.tail->right = root;
 
-        l.head = leftLL.head;
-        l.tail = root;
+        ll.head = leftLL.head;
+        ll.tail = root;
     }
     else if(root->left==NULL && root->right!=NULL)
     {

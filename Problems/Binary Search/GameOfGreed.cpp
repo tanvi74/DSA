@@ -24,9 +24,55 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+bool ifPossibleToDivide(vector<int>arr, int N, int key, int leastCoins)
+{
+    int partition = 0;
+    int curr_friend = 0;
+
+    for(int i=0;i<N;i++)
+    {
+        if(curr_friend+arr[i]>=leastCoins)
+        {
+            curr_friend = 0;
+            partition++;
+        }
+        else
+        {
+            curr_friend += arr[i];
+        }
+    }
+
+    return partition >= key;
+}
+
 int game_of_greed(vecotor<int>arr, int N, int key)
 {
     
+    int s = 0, e = 0;
+    for(int i=0;i<N;i++)
+    {
+        e += arr[i];
+    }
+
+    int ans;
+    while(s<=e)
+    {
+        int mid = (s+e)/2;
+        bool ifPossible = ifPossibleToDivide(arr, N, key, mid);
+
+        if(ifPossible)
+        {
+            s = mid+1;
+            ans = mid;
+        }
+        else
+        {
+            e = mid-1;
+        }
+    }
+
+    return ans;
+
 }
 
 int main()
